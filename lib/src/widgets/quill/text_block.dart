@@ -282,6 +282,7 @@ class EditableTextBlock extends StatelessWidget {
         enabled: !readOnly,
         onChanged: (checked) => onCheckboxTap(line.documentOffset, checked),
         uiBuilder: defaultStyles.lists?.checkboxUIBuilder,
+        alignment: defaultStyles.lists?.checkboxAlignment,
       );
     }
     if (attrs.containsKey(Attribute.codeBlock.key) &&

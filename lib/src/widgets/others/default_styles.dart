@@ -157,9 +157,15 @@ class DefaultListBlockStyle extends DefaultTextBlockStyle {
     super.lineSpacing,
     super.decoration,
     this.checkboxUIBuilder,
+    this.checkboxAlignment,
   );
 
   final QuillCheckboxBuilder? checkboxUIBuilder;
+  
+  /// Alignment of the list checkbox. It's ignored if [checkboxUIBuilder] is specified.
+  /// 
+  /// Defaults to [AlignmentDirectional.centerStart].
+  final AlignmentGeometry? checkboxAlignment;
 }
 
 @immutable
@@ -382,6 +388,7 @@ class DefaultStyles {
           const VerticalSpacing(0, 6),
           null,
           null,
+          AlignmentDirectional.centerEnd,
         ),
         quote: DefaultTextBlockStyle(
           TextStyle(color: baseStyle.color!.withOpacity(0.6)),

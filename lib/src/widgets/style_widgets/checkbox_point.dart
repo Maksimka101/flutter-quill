@@ -6,6 +6,7 @@ class QuillEditorCheckboxPoint extends StatefulWidget {
     required this.value,
     required this.enabled,
     required this.onChanged,
+    this.alignment,
     this.uiBuilder,
     super.key,
   });
@@ -14,6 +15,7 @@ class QuillEditorCheckboxPoint extends StatefulWidget {
   final bool value;
   final bool enabled;
   final ValueChanged<bool> onChanged;
+  final AlignmentGeometry? alignment;
   final QuillCheckboxBuilder? uiBuilder;
 
   @override
@@ -46,7 +48,7 @@ class QuillEditorCheckboxPointState extends State<QuillEditorCheckboxPoint> {
             ? theme.colorScheme.onSurface.withOpacity(0.5)
             : theme.colorScheme.onSurface.withOpacity(0.3));
     final child = Container(
-      alignment: AlignmentDirectional.centerEnd,
+      alignment: widget.alignment,
       padding: EdgeInsetsDirectional.only(end: widget.size / 2),
       child: SizedBox(
         width: widget.size,
